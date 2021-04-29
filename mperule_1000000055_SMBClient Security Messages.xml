@@ -1,0 +1,143 @@
+<?xml version="1.0" standalone="yes"?>
+<RuleDataset>
+  <ExportInfo>
+    <ExportConsoleVersion>7.7.0.0</ExportConsoleVersion>
+    <KBVersion>7.1.596.0</KBVersion>
+    <DateExported>2021-04-29T02:50:49.2471652+01:00</DateExported>
+    <ExportLicense>646</ExportLicense>
+    <ExportUser>MAIDO\adm_adamt</ExportUser>
+  </ExportInfo>
+  <MPERule>
+    <MPERuleID>1000000212</MPERuleID>
+    <MPERuleRegexID>1000000055</MPERuleRegexID>
+    <RuleStatus>2</RuleStatus>
+    <StatusName>Test</StatusName>
+    <CommonEventID>9492</CommonEventID>
+    <CommonEventName>SMB Information Message</CommonEventName>
+    <MsgClassID>3400</MsgClassID>
+    <Name>SMBClient Security Messages</Name>
+    <FullName>SMBClient Security Messages</FullName>
+    <BaseRule>1</BaseRule>
+    <DefMsgTTL>32</DefMsgTTL>
+    <DefMsgArchiveMode>2</DefMsgArchiveMode>
+    <DefMsgArchiveModeBool>true</DefMsgArchiveModeBool>
+    <DefForwarding>0</DefForwarding>
+    <DefForwardingBool>false</DefForwardingBool>
+    <DefRiskRating>0</DefRiskRating>
+    <DefFalseAlarmRating>0</DefFalseAlarmRating>
+    <InheritTech>1</InheritTech>
+    <RecordStatus>1</RecordStatus>
+    <DateUpdated>2021-02-25T03:19:58.923+00:00</DateUpdated>
+    <SortOrder>1</SortOrder>
+    <VersionMajor>4</VersionMajor>
+    <VersionMinor>1</VersionMinor>
+    <SHostIs>0</SHostIs>
+    <DHostIs>0</DHostIs>
+    <ServiceIs>4720</ServiceIs>
+    <HostContext>0</HostContext>
+    <ServiceName>smb</ServiceName>
+    <PrefixBaseRuleName>0</PrefixBaseRuleName>
+    <IsSystemRule>No</IsSystemRule>
+    <NewRuleRecordType>0</NewRuleRecordType>
+    <DefLogMartMode>13627389</DefLogMartMode>
+  </MPERule>
+  <MPERule>
+    <MPERuleID>1000000213</MPERuleID>
+    <MPERuleRegexID>1000000055</MPERuleRegexID>
+    <RuleStatus>2</RuleStatus>
+    <StatusName>Test</StatusName>
+    <CommonEventID>1032132</CommonEventID>
+    <CommonEventName>User Logon Failure</CommonEventName>
+    <MsgClassID>1040</MsgClassID>
+    <Name>SMBClient Invalid Credentials</Name>
+    <FullName>SMBClient Invalid Credentials</FullName>
+    <BaseRule>0</BaseRule>
+    <ShortDesc />
+    <LongDesc />
+    <DefMsgTTL>32</DefMsgTTL>
+    <DefMsgArchiveMode>2</DefMsgArchiveMode>
+    <DefMsgArchiveModeBool>true</DefMsgArchiveModeBool>
+    <DefForwarding>0</DefForwarding>
+    <DefForwardingBool>false</DefForwardingBool>
+    <DefRiskRating>0</DefRiskRating>
+    <DefFalseAlarmRating>0</DefFalseAlarmRating>
+    <MapTag1>=3221225581</MapTag1>
+    <InheritTech>1</InheritTech>
+    <RecordStatus>1</RecordStatus>
+    <DateUpdated>2021-02-25T03:19:58.927+00:00</DateUpdated>
+    <SortOrder>1</SortOrder>
+    <VersionMajor>4</VersionMajor>
+    <VersionMinor>1</VersionMinor>
+    <SHostIs>0</SHostIs>
+    <DHostIs>0</DHostIs>
+    <ServiceIs>4720</ServiceIs>
+    <HostContext>0</HostContext>
+    <ServiceName>smb</ServiceName>
+    <PrefixBaseRuleName>0</PrefixBaseRuleName>
+    <IsSystemRule>No</IsSystemRule>
+    <NewRuleRecordType>0</NewRuleRecordType>
+    <MapVMID>=31001</MapVMID>
+    <MapSName>*</MapSName>
+    <MapDName>*</MapDName>
+    <MapLogin>*</MapLogin>
+    <MapSession>*</MapSession>
+    <MapObject>*</MapObject>
+    <MapSubject>*</MapSubject>
+    <DefLogMartMode>13627389</DefLogMartMode>
+  </MPERule>
+  <MPERuleRegex>
+    <MPERuleRegexID>1000000055</MPERuleRegexID>
+    <RegexTagged>(?=Provider Name=\'Microsoft-Windows-SMBClient\' Guid=\'\{988c59c5-0a1c-45b6-a555-0c62276e327d\}\'\s*/\&gt;)Provider Name=\'Microsoft-Windows-SMBClient\' Guid=\'\{988c59c5-0a1c-45b6-a555-0c62276e327d\}\'\s*/\&gt;\&lt;EventID\&gt;(?&lt;vmid&gt;\w+)\&lt;/EventID\&gt;\&lt;Version\&gt;\d+\&lt;/Version\&gt;\&lt;Level\&gt;(?&lt;severity&gt;[^\&lt;]*)\&lt;/Level\&gt;\&lt;Task\&gt;\w*\&lt;/Task\&gt;\&lt;Opcode\&gt;((\d+\&lt;)|(?&lt;vendorinfo&gt;[^\&lt;]+)\&lt;)/Opcode\&gt;\&lt;Keywords\&gt;(?&lt;subject&gt;[^\&lt;]*)\&lt;/Keywords\&gt;\&lt;TimeCreated SystemTime[^\&gt;]+\&gt;\&lt;EventRecordID\&gt;\d+\&lt;/EventRecordID\&gt;(\&lt;Correlation\s*/\&gt;)?\&lt;Execution ProcessID=\'(?&lt;processid&gt;\d+)\'[^\&gt;]+\&gt;\&lt;Channel\&gt;Microsoft-Windows-SmbClient/Security\&lt;/Channel\&gt;\&lt;Computer\&gt;(?&lt;sname&gt;[^\&lt;]+)\&lt;/Computer\&gt;\&lt;Security[^\&gt;]*\&gt;\&lt;/System\&gt;\&lt;EventData\&gt;(\&lt;Data Name=\'Reason\'\&gt;(?&lt;reason&gt;\w+)\&lt;/Data\&gt;)?(\&lt;Data Name=\'Status\'\&gt;(?&lt;tag1&gt;(?&lt;status&gt;[^\&lt;]*))\&lt;/Data\&gt;)?(\&lt;Data Name=\'SecurityStatus\'\&gt;(?&lt;responsecode&gt;[^\&lt;]*)\&lt;/Data\&gt;)?(\&lt;Data Name=\'LogonId\'\&gt;(?&lt;session&gt;\w+)\&lt;/Data\&gt;)?(\&lt;Data Name=\'ShareNameLength\'\&gt;\d*\&lt;/Data\&gt;)?(\&lt;Data Name=\'ShareName\'\&gt;(?&lt;object&gt;\\*(?&lt;dname&gt;[^\\]*)\\[^\&lt;]*)&lt;/Data\&gt;)?(\&lt;Data Name=\'ServerNameLength\'\&gt;\d*\&lt;/Data\&gt;)?(\&lt;Data Name=\'ServerName\'\&gt;\\(?&lt;dname&gt;[^\\\&lt;]*)\&lt;/Data\&gt;)?(\&lt;Data Name=\'((Principal)|(Object))NameLength\'\&gt;\d*\&lt;/Data\&gt;)?(\&lt;Data Name=\'PrincipalName\'\&gt;(?&lt;sessiontype&gt;[^\/]*)[^\&lt;]*\&lt;/Data\&gt;)?(\&lt;Data Name=\'ObjectName\'\&gt;(?&lt;objectname&gt;[^\&lt;]*)\&lt;/Data\&gt;)?(\&lt;Data Name=\'UserNameLength\'\&gt;\d*\&lt;/Data\&gt;)?(\&lt;Data Name=\'UserName\'\&gt;(?&lt;login&gt;[^\&lt;]+)\&lt;/Data\&gt;)?</RegexTagged>
+    <IgnoreCase>1</IgnoreCase>
+    <Multiline>0</Multiline>
+    <RecordStatus>1</RecordStatus>
+    <DateUpdated>2021-02-25T03:19:58.92+00:00</DateUpdated>
+    <PerfMonMode>1</PerfMonMode>
+    <VersionMajor>4</VersionMajor>
+    <VersionMinor>1</VersionMinor>
+  </MPERuleRegex>
+  <MPERuleToMST>
+    <MsgSourceTypeID>1000000014</MsgSourceTypeID>
+    <MPERuleRegexID>1000000055</MPERuleRegexID>
+    <SortOrder>1</SortOrder>
+    <AutoSort>0</AutoSort>
+  </MPERuleToMST>
+  <CommonEvent>
+    <CommonEventID>9492</CommonEventID>
+    <MsgClassID>3400</MsgClassID>
+    <Name>SMB Information Message</Name>
+    <ShortDesc />
+    <DefRiskRating>0</DefRiskRating>
+    <DateUpdated>2020-10-22T18:48:35.987+01:00</DateUpdated>
+    <RecordStatus>1</RecordStatus>
+  </CommonEvent>
+  <CommonEvent>
+    <CommonEventID>1032132</CommonEventID>
+    <MsgClassID>1040</MsgClassID>
+    <Name>User Logon Failure</Name>
+    <ShortDesc />
+    <DefRiskRating>0</DefRiskRating>
+    <DateUpdated>2020-10-22T18:48:35.987+01:00</DateUpdated>
+    <RecordStatus>1</RecordStatus>
+  </CommonEvent>
+  <MsgSourceType>
+    <MsgSourceTypeID>1000000014</MsgSourceTypeID>
+    <Name>MS Win Event Log XML - SmbClient Security</Name>
+    <FullName>MS Win Event Log XML - SmbClient Security</FullName>
+    <Abbreviation>WinEvtX - SmbClntSec</Abbreviation>
+    <ShortDesc>Microsoft-Windows-SmbClient/Security</ShortDesc>
+    <LongDesc />
+    <ParentMsgSourceTypeID>1000000000</ParentMsgSourceTypeID>
+    <IsMst>1</IsMst>
+    <DateUpdated>2021-02-25T00:58:42.78+00:00</DateUpdated>
+    <MsgSourceFormat>28</MsgSourceFormat>
+    <RecordStatus>1</RecordStatus>
+  </MsgSourceType>
+  <Service>
+    <ServiceID>4720</ServiceID>
+    <Name>smb</Name>
+    <ShortDesc>The Server Message Block Protocol (SMB/SMB2) provides a method for client applications to read and write to files and to request services from server programs in a computers network.</ShortDesc>
+    <DateUpdated>2020-10-22T18:48:37.583+01:00</DateUpdated>
+    <RecordStatus>1</RecordStatus>
+  </Service>
+</RuleDataset>
